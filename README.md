@@ -5,10 +5,10 @@
 
 **ZenTask** is a sleek, modern personal task management application developed as part of the RYGNeco Web Development Internship assignment. Inspired by premium corporate UIs like Google Workspace and Microsoft 365, it offers an intuitive experience with a simple login, robust task management, and a responsive interface. The app defaults to a light theme with a soft white background and includes a pure black dark mode toggle for enhanced usability. Built with React and Vite, styled with Tailwind CSS, and powered by `localStorage` for persistence, ZenTask stands out with bonus features like search functionality and dark mode, demonstrating initiative and attention to detail.
 
-- **Author**: Talagana Rajesh  
-- **Email**: talaganarajesh@gmail.com  
-- **GitHub**: [github.com/talaganarajesh](https://github.com/abx15)  
-- **Submission Date**: Friday, July 04, 2025
+- **Author**: Arun Kumar Bind
+- **Email**: developerarunwork@gmail.com  
+- **GitHub**: [github.com/abx15](https://github.com/abx15)
+- **Submission Date**: Friday, 05 December 2025
 
 ## 🚀 Features
 
@@ -50,99 +50,186 @@ To run ZenTask locally on your machine, follow these steps:
    ```
    Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
-4. **Build for Production**  
-   To create a production build:
-   ```bash
-   npm run build
-   ```
-   The build artifacts will be stored in the `dist/` directory, ready for deployment.
+# TaskFlow Tracker
 
-## 🧰 Technologies Used
+An opinionated, lightweight personal task manager built with React, Vite and Tailwind CSS. The app stores data in the browser using `localStorage` and includes features like login, task CRUD, filtering, search, and a dark mode toggle.
 
-**Frontend**:  
-- React – A JavaScript library for building user interfaces.  
-- Vite – Next-generation frontend tooling for fast development.
+**Repository:** local workspace (package name: `taskflow-tracker`)
 
-**Styling**:  
-- Tailwind CSS – Utility-first CSS framework for rapid UI development.
+**Quick summary:** small single-page React app built with Vite; no backend required.
 
-**Persistence**:  
-- `localStorage` – Browser API for storing user data locally.
+**Author:** Please update `package.json` `author` field to set the project owner.
 
-**Deployment**:  
-- Vercel – Platform for static site hosting and deployment.
+**Last updated:** Updated README to reflect repository files and correct scripts.
 
-## 🔗 Live Demo
+**Demo / Screenshots**
+- Local screenshots are included in the `screenshots/` folder. Use them in the README like `./screenshots/dashboard-light.png` when publishing to a remote repo.
 
-Experience ZenTask live at:  
-👉 [https://ZenTask-rygneco.vercel.app/](https://ZenTask-rygneco.vercel.app/)
+**Status:** Ready for local development.
 
-## 🖼 Screenshots
+**Note:** This README has been adjusted to match the actual repository layout and `package.json` scripts.
 
-<!-- **Login Page**  
-![Login Page](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/login-light.png)
-![Login Page](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/login-dark.png) -->
+**Table of contents**
+- Installation
+- Scripts
+- Project structure
+- Features
+- Technologies
+- Development notes
+- License
 
-<!-- 
-**Task Dashboard (Light Mode)**  
-![Task Dashboard - Light Mode](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/dashboard-light.png)
+**Installation**
 
-**Task Dashboard (Dark Mode)**  
-![Task Dashboard - Dark Mode](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/dashboard-dark.png)
+Prerequisites:
+- `Node.js` (LTS recommended)
+- `npm` (bundled with Node.js)
 
-**Adding a Task**  
-![Add Task](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/addtask-light.png) -->
+Clone (if you are using a remote repo):
 
-## 📁 Project Structure
+```powershell
+git clone <repository-url>
+cd task-taker
+```
+
+Install dependencies:
+
+```powershell
+npm install
+```
+
+Start development server (Vite):
+
+```powershell
+npm run dev
+```
+
+Open the app at `http://localhost:5173` (Vite default) in your browser.
+
+Build for production:
+
+```powershell
+npm run build
+```
+
+Preview production build locally:
+
+```powershell
+npm run preview
+```
+
+Run linter:
+
+```powershell
+npm run lint
+```
+
+**Scripts (from `package.json`)**
+- `dev`: runs the Vite dev server (`vite`).
+- `build`: creates a production build (`vite build`).
+- `preview`: serves the production build locally (`vite preview`).
+- `lint`: runs ESLint over the project files.
+
+**Project structure**
+
+The repository contains the following notable files and directories:
 
 ```
-task-tracker/
+./
 ├── index.html
-├── src/
-│   ├── components/
-│   │   ├── Login.jsx
-│   │   ├── TaskDashboard.jsx
-│   │   ├── TaskForm.jsx
-│   │   ├── TaskList.jsx
-│   │   ├── TaskItem.jsx
-│   │   └── TaskFilter.jsx
-│   ├── utils/
-│   │   └── localStorage.js
-│   ├── App.jsx
-│   └── main.jsx
 ├── package.json
 ├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+   ├── App.css
+   ├── assets/
+   │   └── react.svg
+   ├── components/
+   │   ├── Login.jsx
+   │   ├── TaskDashboard.jsx
+   │   ├── TaskForm.jsx
+   │   ├── TaskList.jsx
+   │   ├── TaskItem.jsx
+   │   └── TaskFilter.jsx
+   └── utils/
+       └── localStorage.js
+├── screenshots/
+│   ├── addtask-light.png
+│   ├── login-light.png
+│   ├── login-dark.png
+│   ├── dashboard-light.png
+│   └── dashboard-dark.png
 └── README.md
 ```
 
-## 📝 Notes
+**Components**
+- `Login.jsx` — simple username-based login screen (persists user in `localStorage`).
+- `TaskDashboard.jsx` — main page that composes task list, filters and stats.
+- `TaskForm.jsx` — creates/edits tasks.
+- `TaskList.jsx` — renders task collection.
+- `TaskItem.jsx` — single task row with edit/toggle/delete actions.
+- `TaskFilter.jsx` — UI for filtering tasks (All / Completed / Pending).
 
-### Design Philosophy  
-ZenTask features a premium, corporate-inspired design with a unique "ZenTask" branding, highlighted by an orange accent color and smooth animations. The light theme uses soft grays, while the dark theme is pure black for a striking contrast.
+**Features**
+- Login (username) with local persistence.
+- Create, read, update, delete tasks.
+- Mark tasks complete/incomplete.
+- Filter by status and search tasks by title/description.
+- Dark mode toggle.
+- Client-side persistence via `localStorage` (see `src/utils/localStorage.js`).
 
-### Bonus Features  
-The inclusion of search and dark mode reflects initiative, aligning with the assignment's encouragement for extra effort.
+**Technologies**
+- React 18
+- Vite
+- Tailwind CSS
+- ESLint
 
+**Development notes**
+- The dev server runs on Vite — use `npm run dev`.
+- If you change Tailwind configuration, rebuild CSS by restarting the dev server.
+- Linting is strict (`--max-warnings 0`) — fix linter errors before committing.
+- Tests are not included in this repo; consider adding unit tests with Jest and React Testing Library if needed.
 
-### Testing  
-The application has been rigorously tested for edge cases (e.g., empty inputs, no tasks, persistence across refreshes) and performs well on Chrome, Firefox, and Safari.
+**How to update author/links**
+- Update the `author` and repository information in `package.json` to reflect the proper owner.
+- Replace placeholder demo links with your live deployment URL (if available).
 
-### Challenges Overcome  
-Successfully resolved an initial issue with task persistence on refresh by initializing state with localStorage data and correcting default values.
+**License**
+- Project `license` is set to `MIT` in `package.json`. Update if you need a different license.
 
-### Future Improvements  
-Potential enhancements include task priorities, due dates, or integration with a backend API for multi-device support (post-internship).
+If you'd like, I can also:
+- add a short CONTRIBUTING section and CODE_OF_CONDUCT,
+- wire the screenshots into the README so they render on GitHub,
+- or update author/contact information to match your GitHub profile.
 
-## 🤝 Contribution Guidelines
+---
 
-This project is submitted for the RYGNeco internship and is not open for external contributions at this time. However, feedback is welcome via email at [developerarunwork@gmail.com](mailto:developerarunwork@gmail.com).
+If this update looks good, tell me and I will commit the change or make additional edits (author, links, screenshots embedding, or a short usage walkthrough).
 
-## 📜 License
+--- 
+# TaskFlow Tracker
 
-This project is for educational purposes under the RYGNeco internship assignment and is not licensed for commercial use.  
-**All rights reserved by Talagana Rajesh.**
+An opinionated, lightweight personal task manager built with React, Vite and Tailwind CSS. The app stores data in the browser using `localStorage` and includes features like login, task CRUD, filtering, search, and a dark mode toggle.
 
-## 🌐 Portfolio
+**Repository:** local workspace (package name: `taskflow-tracker`)
 
-Explore more of my projects at:  
-👉 [https://arun15dev.netlify.app/](https://arun15dev.netlify.app)
+**Quick summary:** small single-page React app built with Vite; no backend required.
+
+**Author:** Please update `package.json` `author` field to set the project owner.
+
+**Last updated:** Updated README to reflect repository files and correct scripts.
+
+# Author 
+
+## Developer:Arun Kumar Bind
+- Github: [github.com/abx15](https://github.com/abx15)
+- LinkedIn: [linkedin.com/in/arunkumarbind](https://www.linkedin.com/in/arunkumarbind)
+- Email: developerarunwork@gmail.com
+
+---
+- Give me a ⭐ if you like this project!
+- Made with ❤️ by Arun Kumar Bind
+- Copyright © 2025 Arun Kumar Bind
