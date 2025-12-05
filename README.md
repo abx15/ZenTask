@@ -36,7 +36,7 @@ To run ZenTask locally on your machine, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/abx15/ZenTask.git
-   cd task-tracker
+   cd ZenTask
    ```
 
 2. **Install Dependencies**:
@@ -65,12 +65,13 @@ An opinionated, lightweight personal task manager built with React, Vite and Tai
 **Demo / Screenshots**
 - Local screenshots are included in the `screenshots/` folder. Use them in the README like `./screenshots/dashboard-light.png` when publishing to a remote repo.
 
+
+
 **Status:** Ready for local development.
 
 **Note:** This README has been adjusted to match the actual repository layout and `package.json` scripts.
 
 **Table of contents**
-- Installation
 - Scripts
 - Project structure
 - Features
@@ -78,24 +79,7 @@ An opinionated, lightweight personal task manager built with React, Vite and Tai
 - Development notes
 - License
 
-**Installation**
 
-Prerequisites:
-- `Node.js` (LTS recommended)
-- `npm` (bundled with Node.js)
-
-Clone (if you are using a remote repo):
-
-```powershell
-git clone <repository-url>
-cd task-taker
-```
-
-Install dependencies:
-
-```powershell
-npm install
-```
 
 Start development server (Vite):
 
