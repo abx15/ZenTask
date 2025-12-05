@@ -7,7 +7,7 @@
 
 - **Author**: Talagana Rajesh  
 - **Email**: talaganarajesh@gmail.com  
-- **GitHub**: [github.com/talaganarajesh](https://github.com/talaganarajesh)  
+- **GitHub**: [github.com/talaganarajesh](https://github.com/abx15)  
 - **Submission Date**: Friday, July 04, 2025
 
 ## 🚀 Features
@@ -35,7 +35,7 @@ To run ZenTask locally on your machine, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/talaganarajesh/task-tracker.git
+   git clone https://github.com/abx15/ZenTask.git
    cd task-tracker
    ```
 
@@ -79,11 +79,11 @@ Experience ZenTask live at:
 
 ## 🖼 Screenshots
 
-**Login Page**  
+<!-- **Login Page**  
 ![Login Page](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/login-light.png)
-![Login Page](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/login-dark.png)
+![Login Page](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/login-dark.png) -->
 
-
+<!-- 
 **Task Dashboard (Light Mode)**  
 ![Task Dashboard - Light Mode](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/dashboard-light.png)
 
@@ -91,7 +91,7 @@ Experience ZenTask live at:
 ![Task Dashboard - Dark Mode](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/dashboard-dark.png)
 
 **Adding a Task**  
-![Add Task](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/addtask-light.png)
+![Add Task](https://raw.githubusercontent.com/talaganaRajesh/ZenTask-asgn/refs/heads/main/screenshots/addtask-light.png) -->
 
 ## 📁 Project Structure
 
@@ -135,7 +135,7 @@ Potential enhancements include task priorities, due dates, or integration with a
 
 ## 🤝 Contribution Guidelines
 
-This project is submitted for the RYGNeco internship and is not open for external contributions at this time. However, feedback is welcome via email at [talaganarajesh@gmail.com](mailto:talaganarajesh@gmail.com).
+This project is submitted for the RYGNeco internship and is not open for external contributions at this time. However, feedback is welcome via email at [developerarunwork@gmail.com](mailto:developerarunwork@gmail.com).
 
 ## 📜 License
 
@@ -145,4 +145,4 @@ This project is for educational purposes under the RYGNeco internship assignment
 ## 🌐 Portfolio
 
 Explore more of my projects at:  
-👉 [https://talaganarajesh.vercel.app/](https://talaganarajesh.vercel.app/)
+👉 [https://arun15dev.netlify.app/](https://arun15dev.netlify.app)
