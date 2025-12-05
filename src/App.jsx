@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from './components/Login'
 import TaskDashboard from './components/TaskDashboard'
+import NotFound from "./components/NotFound"
 import { getStoredUsername, clearStoredUsername } from './utils/localStorage'
 
 function App() {
@@ -9,14 +11,12 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
-    // Check if user is already logged in
     const storedUsername = getStoredUsername()
     if (storedUsername) {
       setIsLoggedIn(true)
       setUsername(storedUsername)
     }
 
-    // Check for dark mode preference
     const darkModePreference = localStorage.getItem('darkMode')
     if (darkModePreference === 'true') {
       setIsDarkMode(true)
@@ -24,14 +24,12 @@ function App() {
   }, [])
 
   useEffect(() => {
-    // Apply dark mode class to document
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
     }
-    
-    // Save dark mode preference
+
     localStorage.setItem('darkMode', isDarkMode.toString())
   }, [isDarkMode])
 
@@ -51,20 +49,49 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDarkMode ? 'dark:bg-black' : 'bg-white'
-    }`}>
-      {!isLoggedIn ? (
-        <Login onLogin={handleLogin} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      ) : (
-        <TaskDashboard 
-          username={username} 
-          onLogout={handleLogout} 
-          isDarkMode={isDarkMode} 
-          toggleDarkMode={toggleDarkMode} 
-        />
-      )}
-    </div>
+    <BrowserRouter>
+      <div
+        className={`min-h-screen transition-colors duration-300 ${
+          isDarkMode ? 'dark:bg-black' : 'bg-white'
+        }`}
+      >
+        <Routes>
+
+          {/* 👇 Login Route */}
+          <Route
+            path="/"
+            element={
+              !isLoggedIn ? (
+                <Login onLogin={handleLogin} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              ) : (
+                <Navigate to="/dashboard" />
+              )
+            }
+          />
+
+          {/* 👇 Dashboard Route (Protected) */}
+          <Route
+            path="/dashboard"
+            element={
+              isLoggedIn ? (
+                <TaskDashboard
+                  username={username}
+                  onLogout={handleLogout}
+                  isDarkMode={isDarkMode}
+                  toggleDarkMode={toggleDarkMode}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+
+          {/* 👇 404 Page Route */}
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
